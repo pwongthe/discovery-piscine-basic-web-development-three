@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
 }
@@ -15,8 +14,8 @@ body {
   height: 100vh;
 }
 .b1 {
-  background-color: green;
+  background-color: darkseagreen;
 }
 .b2 {
-  background-color: red;
+  background-color: pink;
 }
