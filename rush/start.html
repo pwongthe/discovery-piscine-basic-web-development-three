@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <style>
+        body {
+            font-family: monospace, sans-serif;
+            display: flex;
+            flex-direction: column; 
+            justify-content: flex-start; 
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #b460b4;
+            padding-top: 125px;
+        }
+
+
+        h1 {
+            color: #fff;
+            margin-bottom: 20%;
+        }
+
+        .profile-selection {
+            display: flex;
+            gap: 25px; 
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .profile-card {
+            padding: 10px;
+            border: 1px solid #ffffff;
+            cursor: pointer;
+            transition: none; 
+            width: auto; 
+            min-width: 150px; 
+            text-align: center;
+            background-color: #362a2a; 
+            color: #fff;
+        }
+
+        .profile-card:hover {
+            border-color: #ff0000; 
+            box-shadow: none;
+            transform: none; 
+            background-color: #444; 
+        }
+
+        .profile-card h3 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: #fff;
+            text-decoration: underline; 
+        }
+
+        .profile-icon {
+            font-size: 40px; 
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold; 
+            text-shadow: 0 0 30px green; 
+        }
+        
+        .profile-card.selected {
+            border: 2px solid rgb(0, 174, 255);
+            background-color: #666;
+            box-shadow: none;
+        }
+    </style>
+
+<script>
+    function selectProfile(profileId) {
+        document.querySelectorAll('.profile-card').forEach(card => {
+            card.classList.remove('selected');
+        });
+        const selectedCard = document.getElementById(profileId);
+        if (selectedCard) {
+            selectedCard.classList.add('selected');
+
+        if (profileId === 'profile2') {
+            setTimeout(function() { 
+                window.location.href = 'three.html'; 
+            }, 10);
+        } 
+        if (profileId === 'profile1') {
+            setTimeout(function() { 
+                window.location.href = 'mu.html'; 
+            }, 10);
+        }
+    }
+}
+</script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>เลือกโปรไฟล์ของคุณ</h1>
+
+    </div>
+
+    <div class="profile-selection"> 
+
+        <div class="profile-card" id="profile1" onclick="selectProfile('profile1')">
+            <span class="profile-icon">μ</span>
+            <h3>MU</h3>
+            <p>Napat Worataveethumrong</p>
+        </div>
+
+        <div class="profile-card" id="profile2" onclick="selectProfile('profile2')">
+            <span class="profile-icon">3</span>
+            <h3>THREE</h3>
+            <p>Phawit Wongthebbabudth</p>
+        </div>
+    </div>
+
+</body>
+</html>
